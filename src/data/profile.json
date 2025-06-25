@@ -1,0 +1,196 @@
+{
+  "name": "Chandradeep Kanumalla",
+  "location": "Hyderabad, India",
+  "contact": {
+    "phone": "+91 6281886602",
+    "email": "k.chandradeep369@gmail.com"
+  },
+  "careerStartDate": "06-05-2019",
+  "profileSummary": "6+ years of experience in responsive front-end development using ReactJS, Angular, TypeScript, and JavaScript. Skilled in performance optimization, integration with backend APIs, and unit testing using Jest. Passionate about UI/UX, scalable design, and cinematic storytelling.",
+  "skills": [
+    "ReactJS",
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "HTML5",
+    "CSS",
+    "Bootstrap",
+    "Redux",
+    "Material UI",
+    "Unit Testing",
+    "REST APIs",
+    "Git",
+    "Agile"
+  ],
+  "projects": [
+    {
+      "client": "Verizon",
+      "company": "Cognizant",
+      "role": "Associate",
+      "from": "2024-05",
+      "to": "Present",
+      "techStack": ["ReactJS", "JavaScript", "HTML", "CSS", "Material UI"],
+      "description": "Developing RTT (Real Time Tool) for 5G services."
+    },
+    {
+      "client": "Inspirafinancial",
+      "company": "Cognizant",
+      "role": "Associate",
+      "from": "2023-06",
+      "to": "2024-05",
+      "techStack": ["ReactJS", "TypeScript"],
+      "description": "Onboarding and investment portal with KYC validation."
+    },
+    {
+      "client": "Titan",
+      "company": "Cognizant",
+      "role": "Programmer Analyst",
+      "from": "2021-09",
+      "to": "2023-05",
+      "techStack": ["Angular", "ReactJS", "JavaScript", "HTML5", "CSS", "Bootstrap"],
+      "description": "Multi-brand e-commerce site migration from Angular to React."
+    },
+    {
+      "client": "Bravura",
+      "company": "Techpearl Pvt Ltd",
+      "role": "Software Engineer",
+      "from": "2020-12",
+      "to": "2021-08",
+      "techStack": ["Angular", "HTML5", "Bootstrap", "CSS", "TypeScript", "C#", "MSSQL"],
+      "description": "Event management app including exhibitor and meeting management."
+    },
+    {
+      "client": "Sureworks",
+      "company": "Circle Square Technologies",
+      "role": "Software Engineer",
+      "from": "2019-05",
+      "to": "2020-12",
+      "techStack": ["Angular", "HTML5", "CSS", "Bootstrap", "TypeScript"],
+      "description": "Smart ERP with inventory, service, SLA, logistics, and procurement modules."
+    },
+    {
+      "client": "Journeys Exotica (Thailand)",
+      "company": "Circle Square Technologies",
+      "role": "Software Engineer",
+      "from": "2019-06",
+      "to": "2020-05",
+      "techStack": ["Angular", "HTML5", "CSS", "Bootstrap", "TypeScript"],
+      "description": "B2B tourism booking platform for hotel and travel packages."
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Technology in Information Technology",
+    "year": "2019",
+    "college": "Sree Vidyanikethan Engineering College"
+  },
+  "experience" : [
+  {
+    "title": "Real Time Tool",
+    "client": "Verizon",
+    "date": "May 2024 – Present",
+    "description": "Application is used to build an RTT (Real Time Tool), which facilitates the development of new applications for 5G services provided across various locations in USA.",
+    "technologies": ["ReactJS", "JavaScript", "HTML", "CSS", "Material UI"],
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "keyLearnings": [
+      "Developed practical expertise in Material UI, using its components and styling system to create a polished, responsive UI."
+    ]
+  },
+  {
+    "title": "Consumer Platform",
+    "client": "InspiraFinancial",
+    "date": "June 2023 – May 2024",
+    "description": "A comprehensive platform for customer onboarding and investment management, including KYC verification and trade management for alternate investments.",
+    "technologies": ["ReactJS", "TypeScript"],
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "keyLearnings": [
+      "Gained practical experience with micro frontends, implementing Module Federation to enable dynamic loading of independent modules, improving scalability.",
+      "Developed and maintained comprehensive test cases using Jest and React Testing Library, ensuring application reliability and high code coverage."
+    ]
+  },
+  {
+    "title": "Titan E-Commerce",
+    "client": "Titan",
+    "date": "September 2021 – May 2023",
+    "description": "Multi-brand e-commerce website offering a wide range of products from Titan’s various brands like Tanishq, Zoya, and Fastrack.",
+    "technologies": ["HTML5", "Angular", "ReactJS", "Bootstrap", "CSS", "JavaScript"],
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "keyLearnings": [
+      "Participated in migrating the project from Angular to React, enhancing skills in project transitions and component-based architecture.",
+      "Learned and implemented Redux for state management, improving scalability and maintainability.",
+      "Integrated Google Sign-In for improved user authentication and experience."
+    ]
+  },
+  {
+    "title": "Bravura Event Management",
+    "client": "Bravura",
+    "date": "December 2020 – August 2021",
+    "description": "A web application for managing events from end-to-end, including meetings, exhibitor management, and customer events.",
+    "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript", "NodeJS", "SQL Server"],
+    "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
+    "keyLearnings": [
+      "Gained experience in image mapping for polygonal shapes and implementing dynamic calculations based on window resizing.",
+      "Explored Node.js and MongoDB, enhancing back-end skills alongside SQL Server experience."
+    ]
+  },
+  {
+    "title": "B2B Tourism Booking",
+    "client": "Journeys Exotica",
+    "date": "May 2019 – December 2020",
+    "description": "A web application for tourism booking management, enabling efficient booking processes for travel agents, including hotels, sightseeing, and transfers.",
+    "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript"],
+    "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
+    "keyLearnings": [
+      "Developed a deep understanding of creating user-friendly interfaces.",
+      "Successfully integrated payment gateways for seamless transactions.",
+      "Gained experience with UI libraries like Bootstrap to enhance design consistency and responsiveness."
+    ]
+  },
+  {
+    "title": "Smart ERP",
+    "client": "Sureworks",
+    "date": "May 2019 – December 2020",
+    "description": "A collaborative ERP platform focused on workflow automation, including AMC service planning, tracking engineers, stock management, and logistics.",
+    "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript"],
+    "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
+    "keyLearnings": [
+      "Developed this project from scratch, gaining first experience with Angular.",
+      "Implemented lazy loading for routes and images, reducing loading speed from 6s to 3s.",
+      "Strengthened client communication skills by visiting client site and gathering direct feedback."
+    ]
+  }
+],
+"roles": [
+  {
+        "icon": "https://cdn-icons-png.flaticon.com/512/1055/1055687.png", 
+        "text": "Developed responsive and interactive user interfaces using React and Angular, ensuring a seamless experience across all devices."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/1023/1023656.png", 
+        "text": "Collaborated with UI/UX designers to translate design mockups into functional code, improving user experience."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/681/681494.png", 
+        "text": "Integrated front-end interfaces with back-end APIs, ensuring smooth communication and functionality."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/3103/3103446.png", 
+        "text": "Built reusable components and implemented modern design patterns to streamline development and maintain consistency."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/633/633759.png",
+        "text": "Optimized the performance of web applications for faster load times and better responsiveness."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/2111/2111288.png", 
+        "text": "Worked with version control tools like Git, managing deployments on platforms like Azure and AWS."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/595/595067.png", 
+        "text": "Ensured code quality and stability through unit testing, writing test cases, and resolving production issues efficiently."
+    },
+    {
+        "icon": "https://cdn-icons-png.flaticon.com/512/1055/1055644.png", 
+        "text": "Engaged in Agile/Scrum processes, collaborating within cross-functional teams to meet project goals and deadlines."
+    }
+]
+}

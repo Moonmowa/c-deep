@@ -1,0 +1,43 @@
+.skills-section {
+  text-align: center;
+  color: #111;
+  position: relative;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.skills-carousel {
+  display: flex;
+  gap: 1.5rem; /* You can increase this safely now */
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-item {
+  flex: 0 0 calc((100% - 3rem) / 3); /* Three items + total gap of 3rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 0.25rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover img {
+  transform: scale(1.1);
+}
+
+.skill-item p {
+  font-size: 0.75rem;
+  margin: 0;
+  color: #333;
+  user-select: none;
+}
