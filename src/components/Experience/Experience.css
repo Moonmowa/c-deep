@@ -179,7 +179,15 @@ h3 {
     right: 70px;
   }
 }
+@media (min-width: 1400px) and (max-width: 1500px) {
+   .left-arrow {
+    left: -29px;
+  }
 
+  .right-arrow {
+    right: -29px;
+  }
+}
 /* Roles container with visual emphasis */
 .roles-container {
   margin: auto;
