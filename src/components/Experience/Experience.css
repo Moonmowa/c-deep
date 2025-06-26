@@ -3,38 +3,34 @@
   background: #fff;
   color: #111;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0 auto;
-  position: relative;
   user-select: none;
+}
+
+.experience-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.carousel-wrapper {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 h2 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 2rem;
-  text-align: center;
   color: #222;
-}
-
-.experience-layout {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.roles-container {
-  flex: 1;
-  min-width: 300px;
-}
-
-.carousel-wrapper {
-  flex: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  text-align: center;
 }
 
 .carousel {
@@ -53,6 +49,7 @@ h2 {
     opacity: 0;
     transform: translateX(60px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -65,7 +62,7 @@ h2 {
   width: 340px;
   padding: 2rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
-              0 12px 48px rgba(0, 0, 0, 0.08);
+    0 12px 48px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -89,6 +86,13 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
+}
+
 .client {
   font-weight: 600;
   color: #444;
@@ -99,13 +103,6 @@ h2 {
   font-size: 0.9rem;
   color: #888;
   font-style: italic;
-}
-
-h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #111;
 }
 
 .description {
@@ -161,29 +158,64 @@ h3 {
 
 .left-arrow {
   position: absolute;
-  left: -15px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .right-arrow {
   position: absolute;
-  right: -15px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media (min-width: 769px) {
+  .left-arrow {
+    left: 70px;
+  }
+
+  .right-arrow {
+    right: 70px;
+  }
+}
+
+/* Roles container with visual emphasis */
+.roles-container {
+  margin: auto;
+  flex: 1;
+  min-width: 300px;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.roles-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
   .experience-layout {
     flex-direction: column;
-    gap: 2rem;
+    padding: 0 1rem;
   }
 
   .carousel {
     width: 100%;
     gap: 1rem;
+    justify-content: center;
     overflow: hidden;
+  }
+
+  .carousel-wrapper {
+    align-items: center;
   }
 
   .experience-card {
@@ -197,17 +229,12 @@ h3 {
     display: none;
   }
 
-  .carousel-wrapper {
+  .carousel-dots {
+    display: flex;
     justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
   }
-}
-
-/* Dots (mobile only) */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
 }
 
 .dot {
@@ -221,4 +248,23 @@ h3 {
 
 .dot.active {
   background: #000;
+}
+
+.date-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #1e3a8a;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 12px;
+  font-weight: 600;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card {
+  position: relative; /* Required for the banner */
 }

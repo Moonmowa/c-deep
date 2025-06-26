@@ -1,0 +1,35 @@
+[
+  {
+    "id": "image-map",
+    "title": "What is an Image Map?",
+    "description": "An image map is an image with clickable areas that trigger different actions depending on where the user clicks. Polygon shapes provide the most versatile way to define these clickable regions. In a real-time project at Techpearl Software Pvt. Ltd. while developing an event management system, we encountered a challenge involving polygonal image maps. Specifically, when users zoomed in or out, or when the image size dynamically changed, the coordinates of the polygon areas needed to be recalculated to maintain accurate clickable regions. To address this, we implemented dynamic coordinate recalculations based on the image scaling. You can find a detailed explanation and approach in the following link:",
+    "link": "https://techpearl.com/blog/how-to-create-an-image-map/"
+  },
+  {
+    "id": "polyfill",
+    "title": "Polyfill",
+    "description": "Polyfills add missing features to JavaScript environments that do not support them natively. They allow your code to work consistently across older and newer browsers by implementing modern methods or behaviors.",
+    "examples": [
+      {
+        "id": "promise-all",
+        "title": "Polyfill for Promise.all",
+        "description": "This snippet implements a custom version of `Promise.all`, a method that runs multiple asynchronous operations in parallel and waits for all of them to complete. It collects the results in order and returns a promise that resolves only after all promises resolve. If any reject, the combined promise immediately rejects.",
+        "snippet": {
+          "language": "javascript",
+          "code": "function promiseAll(promises) {\n  return new Promise((resolve, reject) => {\n    if (!Array.isArray(promises)) {\n      return reject(new TypeError('Argument must be an array'));\n    }\n    let resolvedCounter = 0;\n    let promiseNum = promises.length;\n    let resolvedValues = new Array(promiseNum);\n\n    for (let i = 0; i < promiseNum; i++) {\n      Promise.resolve(promises[i])\n        .then(value => {\n          resolvedValues[i] = value;\n          resolvedCounter++;\n          if (resolvedCounter === promiseNum) {\n            resolve(resolvedValues);\n          }\n        })\n        .catch(reject);\n    }\n  });\n}"
+        },
+        "additionalDescription": "Use this polyfill when you want to run multiple asynchronous tasks concurrently and handle their results collectively. This mimics the native `Promise.all` for compatibility."
+      },
+      {
+        "id": "custom-array-map",
+        "title": "Custom Polyfill for Array.map",
+        "description": "This snippet creates a custom implementation of `Array.prototype.map` that applies a provided function to each element of an array and returns a new array with the results.",
+        "snippet": {
+          "language": "javascript",
+          "code": "if (!Array.prototype.map) {\n  Array.prototype.map = function(callback, thisArg) {\n    if (this == null) {\n      throw new TypeError('Array.prototype.map called on null or undefined');\n    }\n    if (typeof callback !== 'function') {\n      throw new TypeError(callback + ' is not a function');\n    }\n    var result = [];\n    var array = Object(this);\n    var len = array.length >>> 0;\n    for (var i = 0; i < len; i++) {\n      if (i in array) {\n        result[i] = callback.call(thisArg, array[i], i, array);\n      }\n    }\n    return result;\n  };\n}"
+        },
+        "additionalDescription": "This polyfill ensures older environments support the `map` method, allowing transformation of array elements by applying a function to each."
+      }
+    ]
+  }
+]

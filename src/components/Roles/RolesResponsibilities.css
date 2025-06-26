@@ -1,23 +1,60 @@
 .roles-section {
-  margin-bottom: 2rem;
-  padding: 0 1rem;
+  position: relative;
+  padding: 2rem 1rem;
+  overflow: hidden;
+  height: 360px; /* <-- Height for 4 roles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.roles-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #222;
+.roles-section::before,
+.roles-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.roles-section::before {
+  top: 0;
+  background: linear-gradient(to bottom, #f0f4f8, transparent);
+}
+
+.roles-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, #f0f4f8, transparent);
+}
+
+.roles-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-vertical 15s linear infinite;
+}
+
+.roles-section:hover .roles-scroll-wrapper {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 .roles-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 1rem 1.5rem;
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 900px;
+  margin: 0;
 }
 
 .roles-list li {
@@ -27,10 +64,14 @@
   font-size: 0.9rem;
   color: #333;
   line-height: 1.4;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 12px;
   padding: 0.8rem 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.75rem;
+  min-height: 85px;
+  position: relative;
+  z-index: 2;
 }
 
 .role-icon {
@@ -38,20 +79,4 @@
   height: 24px;
   flex-shrink: 0;
   margin-top: 2px;
-}
-
-@media (max-width: 768px) {
-  .roles-list {
-    grid-template-columns: 1fr;
-  }
-
-  .roles-list li {
-    font-size: 0.85rem;
-    padding: 0.75rem;
-  }
-
-  .role-icon {
-    width: 22px;
-    height: 22px;
-  }
 }

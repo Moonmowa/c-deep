@@ -1,5 +1,7 @@
 {
-  "name": "Chandradeep Kanumalla",
+  "fullName": "Chandradeep Kanumalla",
+  "firstName": "Chandradeep",
+  "lastName": "Kanumalla",
   "location": "Hyderabad, India",
   "contact": {
     "phone": "+91 6281886602",
@@ -92,7 +94,8 @@
     "technologies": ["ReactJS", "JavaScript", "HTML", "CSS", "Material UI"],
     "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     "keyLearnings": [
-      "Developed practical expertise in Material UI, using its components and styling system to create a polished, responsive UI."
+      "Developed practical expertise in Material UI, using its components and styling system to create a polished, responsive UI.",
+      "Built responsive and device-specific UIs using styled-components to manage layout and styling complexity across desktop and mobile views."
     ]
   },
   {
@@ -115,7 +118,7 @@
     "technologies": ["HTML5", "Angular", "ReactJS", "Bootstrap", "CSS", "JavaScript"],
     "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     "keyLearnings": [
-      "Participated in migrating the project from Angular to React, enhancing skills in project transitions and component-based architecture.",
+      "Involved in migrating the project from Angular to React, gaining hands-on experience in component-based architecture and project transitions.",
       "Learned and implemented Redux for state management, improving scalability and maintainability.",
       "Integrated Google Sign-In for improved user authentication and experience."
     ]

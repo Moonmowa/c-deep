@@ -36,18 +36,21 @@ const roles = [
   },
 ];
 
-function RolesResponsibilities({ isMobile }) {
+function RolesResponsibilities() {
+  const allRoles = [...roles, ...roles]; // duplicate for looping effect
+
   return (
     <section className="roles-section" id="roles-responsibilities">
-      {isMobile && <h2>Roles & Responsibilities</h2>}
-      <ul className="roles-list">
-        {roles.map((role, i) => (
-          <li key={i}>
-            <img src={role.icon} alt="icon" className="role-icon" />
-            {role.text}
-          </li>
-        ))}
-      </ul>
+      <div className="roles-scroll-wrapper">
+        <ul className="roles-list">
+          {allRoles.map((role, i) => (
+            <li key={i}>
+              <img src={role.icon} alt="icon" className="role-icon" />
+              {role.text}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -1,56 +1,80 @@
-import React, { useEffect, useRef } from 'react';
+// Home.jsx
+import React, { useEffect, useRef, useState } from 'react';
 import data from '../../data/profile.json';
 import Navbar from '../common/NavBar/Navbar';
 import { useLocation } from 'react-router-dom';
 import './Home.css';
 import { getExperience } from '../../util/util';
 import About from '../About/About';
-// import Contact from '../Contact/Contact';
-import Work from '../Work/Work';
 import Experience from '../Experience/Experience';
 
 function Home() {
-  const { name, location } = data;
-  const locationState = useLocation().state;
+  const { firstName, location } = data;
   const experience = getExperience(data.careerStartDate);
-  const aboutRef = useRef(null);
-  const contactRef = useRef(null);
-  const workRef = useRef(null);
+  const locationState = useLocation().state;
 
+  const aboutRef = useRef(null);
+  const workRef = useRef(null);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     if (locationState?.scrollTo === 'about') {
       aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (locationState?.scrollTo === 'contact') {
-      contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (locationState?.scrollTo === 'home') {
+    } else if (locationState?.scrollTo === 'experience') {
+      workRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (locationState?.scrollTo === 'experience'){
-       workRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [locationState]);
-  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const aboutTop = aboutRef.current?.offsetTop || 0;
+      const workTop = workRef.current?.offsetTop || 0;
+
+      if (scrollY >= workTop - 100) {
+        setActiveSection('experience');
+      } else if (scrollY >= aboutTop - 100) {
+        setActiveSection('about');
+      } else {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="home-container">
-      <Navbar />
+      <Navbar activeSection={activeSection} />
 
       <section className="home-hero">
-        <div className="home-left">
+        <div className="home-left" aria-label="Avatar placeholder">
           <div className="avatar-placeholder">
             <span>👤</span>
           </div>
         </div>
 
         <div className="home-right">
-          <h1>Hello, I’m <span className="highlight">{name}</span></h1>
-          <h2>Front-end Developer based in {location}</h2>
-          <p className="experience-line">{experience} of experience in web development</p>
-          <p>
-            I craft performant, elegant, and scalable web interfaces using React, Angular, and TypeScript.
+          <h1 className="random-offset-1">
+            Hello, I’m <span className="highlight">{firstName}</span>
+          </h1>
+          <h2 className="random-offset-2">
+            <span className="colorful-text">Front-end Web Developer</span> based in {location}
+          </h2>
+
+          <p className="experience-line random-offset-3">
+            {experience} of{' '}
+            <button
+              type="button"
+              className="cta-button inline-button"
+              onClick={() => workRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              experience
+            </button>
           </p>
-          <button className="cta-button" onClick={() => workRef.current?.scrollIntoView({ behavior: 'smooth' })}>
-            Professional Experience
-          </button>
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Skills.css';
 
 const skills = [
@@ -14,31 +14,25 @@ const skills = [
 ];
 
 function Skills() {
-  const [startIndex, setStartIndex] = useState(0);
-  const itemsToShow = 3;
-  const totalSkills = skills.length;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % totalSkills);
-    }, 2000); // every 2 seconds
-    return () => clearInterval(interval);
-  }, [totalSkills]);
-
-  const visibleSkills = [];
-  for (let i = 0; i < itemsToShow; i++) {
-    visibleSkills.push(skills[(startIndex + i) % totalSkills]);
-  }
+  const animationDuration = 27; // total animation duration in seconds
+  const delayStep = 3;          // delay between each item in seconds
 
   return (
     <section className="skills-section" id="skills">
       <div className="skills-carousel">
-        {visibleSkills.map((skill) => (
-          <div key={skill.name} className="skill-item">
-            <img src={skill.icon} alt={skill.name} />
-            <p>{skill.name}</p>
-          </div>
-        ))}
+        {skills.map((skill, index) => {
+          const delay = index * delayStep;
+          return (
+            <div
+              key={index}
+              className="skill-item"
+              style={{ animationDelay: `${delay}s`, animationDuration: `${animationDuration}s` }}
+            >
+              <img src={skill.icon} alt={skill.name} />
+              <p>{skill.name}</p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

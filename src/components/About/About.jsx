@@ -14,19 +14,19 @@ function About() {
           <h2 className="about-title">About Me</h2>
 
           <p className="about-text">
-            With <strong>{years}+ years</strong> of experience delivering high-quality, scalable interfaces across domains like ERP, e-commerce, finance, telecom, and travel.
+            I’ve spent the last <strong>{years}+ years</strong> crafting clean, scalable, and high-performing interfaces — across industries like <span className="highlight">ERP</span>, <span className="highlight">e-commerce</span>, <span className="highlight">finance</span>, <span className="highlight">telecom</span>, and <span className="highlight">travel</span>.
           </p>
 
           <p className="about-text">
-            My core stack includes React, Angular, TypeScript, and modern web standards like HTML, CSS, and Bootstrap. I’ve worked closely with clients and cross-functional teams to build intuitive UIs, optimize performance, and solve real-world problems through thoughtful front-end architecture.
+            My core toolkit includes <span className="highlight">React</span>, <span className="highlight">Angular</span>, <span className="highlight">JavaScript/TypeScript</span>, and modern web standards like <span className="highlight">HTML</span>, <span className="highlight">CSS</span>, and <span className="highlight">Bootstrap</span>. I’ve worked closely with clients and teams to bring ideas to life — building intuitive UIs, improving performance, and solving meaningful front-end challenges.
           </p>
 
           <p className="about-text">
-            My career started at Circle Square Technologies, a startup where I transitioned from intern to full-time developer. I worked directly with clients and helped rebuild SmartERP — migrating it from AngularJS to Angular 7.
+            Along the way, I’ve learned to adapt with evolving technologies, approach problems with curiosity, and focus on what truly matters — the user experience.
           </p>
 
           <p className="about-text">
-            That early experience shaped my ability to own complex front-end systems — a skill I've continued to build across every project I've taken on since.
+            These days, I love building thoughtful, creative <span className="highlight">React-based solutions</span> that are not just functional, but also maintainable and future-ready.
           </p>
         </div>
 

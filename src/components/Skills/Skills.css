@@ -1,43 +1,95 @@
 .skills-section {
   text-align: center;
-  color: #111;
-  position: relative;
-  padding: 2rem 1rem;
-  max-width: 700px;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  width: 300px;
   margin: 0 auto;
   overflow: hidden;
+  height: 220px;
+  /* Enough to fully show the skill card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #f0f4f8;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skills-carousel {
-  display: flex;
-  gap: 1.5rem; /* You can increase this safely now */
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .skill-item {
-  flex: 0 0 calc((100% - 3rem) / 3); /* Three items + total gap of 3rem */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(100%);
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: slideInOut 27s ease-in-out infinite;
+  z-index: 0;
+  animation-name: slideInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 }
+
 
 .skill-item img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  margin-bottom: 0.25rem;
-  transition: transform 0.3s ease;
-}
-
-.skill-item:hover img {
-  transform: scale(1.1);
+  margin-bottom: 1rem;
 }
 
 .skill-item p {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   margin: 0;
   color: #333;
   user-select: none;
 }
+
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(100%);
+    z-index: 1;
+  }
+
+  5% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0%);
+    z-index: 2;
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0%);
+    z-index: 2;
+  }
+
+  30% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(0%);
+    /* <-- DO NOT SLIDE OUT */
+    z-index: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(0%);
+    z-index: 1;
+  }
+}
+
