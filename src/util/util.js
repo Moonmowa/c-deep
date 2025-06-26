@@ -1,5 +1,7 @@
 export function getExperience(startDateStr) {
   const startDate = new Date(startDateStr);
+  if (isNaN(startDate)) return 'Invalid date';
+
   const now = new Date();
 
   let years = now.getFullYear() - startDate.getFullYear();
@@ -18,6 +20,8 @@ export function getExperience(startDateStr) {
 
 export function getYearsOfExperience(startDateStr) {
   const startDate = new Date(startDateStr);
+  if (isNaN(startDate)) return 0;
+
   const now = new Date();
 
   let years = now.getFullYear() - startDate.getFullYear();
@@ -29,4 +33,3 @@ export function getYearsOfExperience(startDateStr) {
 
   return years;
 }
-
