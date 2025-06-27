@@ -89,6 +89,7 @@
   {
     "title": "Real Time Tool",
     "client": "Verizon",
+    "company": "Cognizant",
     "date": "May 2024 – Present",
     "description": "Application is used to build an RTT (Real Time Tool), which facilitates the development of new applications for 5G services provided across various locations in USA.",
     "technologies": ["ReactJS", "JavaScript", "HTML", "CSS", "Material UI"],
@@ -101,6 +102,7 @@
   {
     "title": "Consumer Platform",
     "client": "InspiraFinancial",
+    "company": "Cognizant",
     "date": "June 2023 – May 2024",
     "description": "A comprehensive platform for customer onboarding and investment management, including KYC verification and trade management for alternate investments.",
     "technologies": ["ReactJS", "TypeScript"],
@@ -113,6 +115,7 @@
   {
     "title": "Titan E-Commerce",
     "client": "Titan",
+    "company": "Cognizant",
     "date": "September 2021 – May 2023",
     "description": "Multi-brand e-commerce website offering a wide range of products from Titan’s various brands like Tanishq, Zoya, and Fastrack.",
     "technologies": ["HTML5", "Angular", "ReactJS", "Bootstrap", "CSS", "JavaScript"],
@@ -126,6 +129,7 @@
   {
     "title": "Bravura Event Management",
     "client": "Bravura",
+     "company": "Techpearl Pvt Ltd",
     "date": "December 2020 – August 2021",
     "description": "A web application for managing events from end-to-end, including meetings, exhibitor management, and customer events.",
     "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript", "NodeJS", "SQL Server"],
@@ -138,6 +142,7 @@
   {
     "title": "B2B Tourism Booking",
     "client": "Journeys Exotica",
+    "company": "Circle Square Technologies",
     "date": "May 2019 – December 2020",
     "description": "A web application for tourism booking management, enabling efficient booking processes for travel agents, including hotels, sightseeing, and transfers.",
     "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript"],
@@ -151,6 +156,7 @@
   {
     "title": "Smart ERP",
     "client": "Sureworks",
+    "company": "Circle Square Technologies",
     "date": "May 2019 – December 2020",
     "description": "A collaborative ERP platform focused on workflow automation, including AMC service planning, tracking engineers, stock management, and logistics.",
     "technologies": ["HTML5", "Angular", "Bootstrap", "CSS", "TypeScript"],

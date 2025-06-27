@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Skills.css';
 
 const skills = [
@@ -13,20 +13,44 @@ const skills = [
   { name: 'Material UI', icon: 'https://cdn.worldvectorlogo.com/logos/material-ui-1.svg' },
 ];
 
+const animationDuration = 18; // total animation duration in seconds
+const delayStep = 2;          // delay per item in seconds
+
 function Skills() {
-  const animationDuration = 27; // total animation duration in seconds
-  const delayStep = 3;          // delay between each item in seconds
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const totalMs = animationDuration * 1000;
+    let startTime = performance.now();
+
+    const id = setInterval(() => {
+      const elapsed = (performance.now() - startTime) % totalMs;
+      const index = Math.floor(elapsed / (delayStep * 1000)) % skills.length;
+      setCurrentIndex(index);
+    }, 100);
+
+    return () => clearInterval(id);
+  }, []);
+
+  const prevIndex = (currentIndex - 1 + skills.length) % skills.length;
 
   return (
     <section className="skills-section" id="skills">
       <div className="skills-carousel">
         {skills.map((skill, index) => {
           const delay = index * delayStep;
+          const isActive = index === currentIndex;
+          const isPrev = index === prevIndex;
+
           return (
             <div
               key={index}
               className="skill-item"
-              style={{ animationDelay: `${delay}s`, animationDuration: `${animationDuration}s` }}
+              style={{
+                animationDelay: `${delay}s`,
+                animationDuration: `${animationDuration}s`,
+                zIndex: isActive ? 20 : isPrev ? 10 : 0,
+              }}
             >
               <img src={skill.icon} alt={skill.name} />
               <p>{skill.name}</p>

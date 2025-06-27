@@ -6,7 +6,6 @@
   margin: 0 auto;
   overflow: hidden;
   height: 220px;
-  /* Enough to fully show the skill card */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,14 +36,13 @@
   flex-direction: column;
   align-items: center;
   opacity: 0;
-  animation: slideInOut 27s ease-in-out infinite;
-  z-index: 0;
   animation-name: slideInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  /* Remove fixed z-index here to allow React inline styles to control it dynamically */
+  /* z-index: 0; */
 }
-
 
 .skill-item img {
   width: 60px;
@@ -64,32 +62,62 @@
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) translateX(100%);
-    z-index: 1;
+    /* z-index is controlled by React inline style */
   }
 
   5% {
     opacity: 1;
     transform: translate(-50%, -50%) translateX(0%);
-    z-index: 2;
   }
 
   25% {
     opacity: 1;
     transform: translate(-50%, -50%) translateX(0%);
-    z-index: 2;
   }
 
   30% {
     opacity: 0;
     transform: translate(-50%, -50%) translateX(0%);
-    /* <-- DO NOT SLIDE OUT */
-    z-index: 1;
   }
 
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) translateX(0%);
-    z-index: 1;
   }
 }
 
+.skills-column {
+  flex: 1;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .skills-column {
+    padding-left: 0;
+    max-width: 100%;
+  }
+  .skills-section {
+    height: 180px;
+    padding: 2rem 1rem;
+  }
+
+  .skill-item {
+    padding: 1.5rem;
+    max-width: 90%;
+    border-radius: 12px;
+  }
+
+  .skill-item img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-item p {
+    font-size: 0.95rem;
+  }
+}

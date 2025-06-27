@@ -64,6 +64,7 @@ h2 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
     0 12px 48px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .experience-card:hover {
@@ -179,8 +180,9 @@ h3 {
     right: 70px;
   }
 }
+
 @media (min-width: 1400px) and (max-width: 1500px) {
-   .left-arrow {
+  .left-arrow {
     left: -29px;
   }
 
@@ -188,7 +190,7 @@ h3 {
     right: -29px;
   }
 }
-/* Roles container with visual emphasis */
+
 .roles-container {
   margin: auto;
   flex: 1;
@@ -210,6 +212,13 @@ h3 {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .experience-card:hover {
+    transform: unset;
+  }
+  .experience-section {
+    padding: 2rem 1rem;
+  }
+
   .experience-layout {
     flex-direction: column;
     padding: 0 1rem;
@@ -226,10 +235,13 @@ h3 {
     align-items: center;
   }
 
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
   .experience-card {
-    width: 90vw;
-    max-width: 320px;
-    padding: 1.5rem;
+    border-radius: unset;
   }
 
   .left-arrow,
@@ -242,6 +254,50 @@ h3 {
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
+  }
+
+  .date-banner {
+    position: static;
+    display: inline-block;
+    margin: 0.5rem 0 0.8rem;
+    background-color: #1e3a8a;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: none;
+  }
+
+  .experience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .mobilefix-20250627083036-client-tag {
+    display: inline-block;
+    margin-top: 0.4rem;
+    background-color: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #1e3a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Hide mobile-only tag on desktop */
+@media (min-width: 769px) {
+  .mobilefix-20250627083036-client-tag {
+    display: none;
   }
 }
 
@@ -273,6 +329,8 @@ h3 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.experience-card {
-  position: relative; /* Required for the banner */
+.carousel-touch-wrapper {
+  width: 100%;
+  touch-action: pan-y;
+  /* Block horizontal page swipe */
 }

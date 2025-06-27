@@ -2,7 +2,8 @@
   position: relative;
   padding: 2rem 1rem;
   overflow: hidden;
-  height: 360px; /* <-- Height for 4 roles */
+  height: 270px;
+  /* Height for 3 items */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,6 +47,7 @@
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -79,4 +81,10 @@
   height: 24px;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .roles-section {
+    height: 196px;
+  }
 }

@@ -24,14 +24,6 @@
   padding-right: 2.5rem;          /* more right padding for breathing room */
 }
 
-.skills-column {
-  flex: 1;
-  min-width: 320px;               /* slightly larger min width */
-  max-width: 420px;               /* increased max width */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .about-title {
   font-size: 1.8rem;
@@ -58,11 +50,12 @@
 
 @media (max-width: 768px) {
   .about-container {
-    padding: 3rem 1.5rem;          /* keep some horizontal padding on mobile */
+    padding: 1rem 1.5rem;          /* keep some horizontal padding on mobile */
   }
   
   .about-inner {
     flex-direction: column;
+    gap: 0;
   }
 
   .about-text-column {
@@ -71,11 +64,6 @@
     max-width: 100%;
   }
 
-  .skills-column {
-    padding-left: 0;
-    margin-top: 2rem;
-    max-width: 100%;
-  }
 
   .about-title {
     font-size: 1.5rem;
