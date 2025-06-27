@@ -1,3 +1,4 @@
+/* Common styles */
 .experience-section {
   padding: 4rem 2rem;
   background: #fff;
@@ -9,11 +10,14 @@
 .experience-layout {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap; 
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 5rem;
   padding: 0 2rem;
   flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .carousel-wrapper {
@@ -23,14 +27,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #222;
-  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .carousel {
@@ -38,6 +37,7 @@ h2 {
   gap: 2rem;
   justify-content: center;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .fade-slide {
@@ -54,6 +54,14 @@ h2 {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+  text-align: center;
 }
 
 .experience-card {
@@ -136,6 +144,7 @@ h3 {
   list-style-type: disc;
 }
 
+/* Arrow buttons */
 .arrow {
   width: 40px;
   height: 40px;
@@ -149,6 +158,9 @@ h3 {
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .arrow:hover {
@@ -157,64 +169,28 @@ h3 {
   border: 1px solid #000;
 }
 
+/* Position using % instead of fixed px */
 .left-arrow {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: -5%;
 }
 
 .right-arrow {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: -5%;
 }
 
-@media (min-width: 769px) {
+/* Clamp to avoid going off-screen */
+@media (min-width: 1200px) {
   .left-arrow {
-    left: 70px;
+    left: -60px;
   }
 
   .right-arrow {
-    right: 70px;
+    right: -60px;
   }
-}
-
-@media (min-width: 1400px) and (max-width: 1500px) {
-  .left-arrow {
-    left: -29px;
-  }
-
-  .right-arrow {
-    right: -29px;
-  }
-}
-
-.roles-container {
-  margin: auto;
-  flex: 1;
-  min-width: 300px;
-  background: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-}
-
-.roles-heading {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .experience-card:hover {
-    transform: unset;
-  }
   .experience-section {
     padding: 2rem 1rem;
   }
@@ -229,6 +205,10 @@ h3 {
     gap: 1rem;
     justify-content: center;
     overflow: hidden;
+  }
+
+  .experience-card:hover {
+    transform: none;
   }
 
   .carousel-wrapper {
@@ -301,6 +281,7 @@ h3 {
   }
 }
 
+/* Dots */
 .dot {
   width: 10px;
   height: 10px;
@@ -332,5 +313,15 @@ h3 {
 .carousel-touch-wrapper {
   width: 100%;
   touch-action: pan-y;
-  /* Block horizontal page swipe */
+}
+/* Roles container layout control */
+.roles-container {
+  margin: auto;
+   flex: 1 1 38%;
+  min-width: 300px;
+  max-width: 570px;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }

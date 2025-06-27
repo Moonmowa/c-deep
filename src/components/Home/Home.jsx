@@ -66,13 +66,12 @@ function Home() {
           </h2>
 
           <p className="experience-line random-offset-3">
-            {experience} of{' '}
             <button
               type="button"
               className="cta-button inline-button"
               onClick={() => workRef.current?.scrollIntoView({ behavior: 'smooth' })}
             >
-              experience
+              View Experience
             </button>
           </p>
         </div>
