@@ -11,6 +11,48 @@
   right: 0;
   z-index: 1000;
 }
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.navbar-menu button {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563; /* slate-600 */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu button:hover {
+  color: #1e40af; /* blue-800 */
+}
+
+.navbar-menu button.active {
+  color: #1e40af;
+}
+
+.navbar-menu button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #1e40af;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar-menu button.active::after {
+  transform: scaleX(1);
+}
 .navbar-menu button {
   background: none;
   border: none;
@@ -30,13 +72,13 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  height: 50px; /* or whatever fits your navbar */
+  height: 50px;
 }
 
 .navbar-logo img 
 {
-  height: 100%;      /* scale with parent */
-  width: auto;       /* maintain aspect ratio */
+  height: 100%;     
+  width: auto;       
   object-fit: contain;
 }
 .hamburger {
@@ -107,7 +149,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 64px; /* height of navbar */
+    top: 64px;
     left: 0;
     width: 100%;
     background: white;

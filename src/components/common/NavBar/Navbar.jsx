@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ activeSection }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScrollTo = (section) => {
-    setMenuOpen(false); // close menu on navigation
+    setMenuOpen(false);
     navigate('/', { state: { scrollTo: section } });
   };
 
   const handleInsightsClick = () => {
-    setMenuOpen(false); // close menu on navigation
-    if (!window.location.href.includes('articles')) {
-      navigate('articles');
+    setMenuOpen(false);
+    if (!location.pathname.includes('/articles')) {
+      navigate('/articles');
     }
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/cdeep_logo_t.png" alt="Logo" />
+        <img src="/cdeep.png" onClick={() => handleScrollTo('home')} alt="Logo" />
       </div>
 
       <div
@@ -40,16 +41,24 @@ function Navbar() {
 
       <ul className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
         <li>
-          <button onClick={() => handleScrollTo('home')}>HOME</button>
+          <button className={activeSection === 'home' ? 'active' : ''} onClick={() => handleScrollTo('home')}>
+            HOME
+          </button>
         </li>
         <li>
-          <button onClick={() => handleScrollTo('about')}>ABOUT</button>
+          <button className={activeSection === 'about' ? 'active' : ''} onClick={() => handleScrollTo('about')}>
+            ABOUT
+          </button>
         </li>
         <li>
-          <button onClick={() => handleScrollTo('experience')}>EXPERIENCE</button>
+          <button className={activeSection === 'experience' ? 'active' : ''} onClick={() => handleScrollTo('experience')}>
+            EXPERIENCE
+          </button>
         </li>
         <li>
-          <button onClick={handleInsightsClick}>INSIGHTS</button>
+          <button className={activeSection === 'insights' ? 'active' : ''} onClick={handleInsightsClick}>
+            INSIGHTS
+          </button>
         </li>
       </ul>
     </nav>

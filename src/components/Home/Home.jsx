@@ -1,86 +1,96 @@
-// Home.jsx
 import React, { useEffect, useRef, useState } from 'react';
-import data from '../../data/profile.json';
-import Navbar from '../common/NavBar/Navbar';
 import { useLocation } from 'react-router-dom';
+import data from '../../data/profile.json';
 import './Home.css';
-import { getExperience } from '../../util/util';
 import About from '../About/About';
 import Experience from '../Experience/Experience';
 
-function Home() {
+function Home({ setActiveSection }) {
   const { firstName, location } = data;
-  const experience = getExperience(data.careerStartDate);
   const locationState = useLocation().state;
 
   const aboutRef = useRef(null);
   const workRef = useRef(null);
-  const [activeSection, setActiveSection] = useState('home');
+  const homeRef = useRef(null);
+  const [activeSectionLocal, setActiveSectionLocal] = useState('home');
 
   useEffect(() => {
-    if (locationState?.scrollTo === 'about') {
-      aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (locationState?.scrollTo === 'experience') {
-      workRef.current?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(activeSectionLocal);
+  }, [activeSectionLocal, setActiveSection]);
+
+useEffect(() => {
+  if (!locationState?.scrollTo) return;
+
+  const targetRef =
+    locationState.scrollTo === 'about'
+      ? aboutRef
+      : locationState.scrollTo === 'experience'
+      ? workRef
+      : homeRef;
+
+  const scrollToTarget = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(scrollToTarget);
     }
-  }, [locationState]);
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const aboutTop = aboutRef.current?.offsetTop || 0;
-      const workTop = workRef.current?.offsetTop || 0;
+  scrollToTarget();
+}, [locationState]);
+useEffect(() => {
+  let scrollTimeout = null;
 
-      if (scrollY >= workTop - 100) {
-        setActiveSection('experience');
-      } else if (scrollY >= aboutTop - 100) {
-        setActiveSection('about');
+  const handleScroll = () => {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+
+    scrollTimeout = setTimeout(() => {
+      const aboutTop = aboutRef.current?.getBoundingClientRect().top;
+      const workTop = workRef.current?.getBoundingClientRect().top;
+      const threshold = 300;
+
+      if (typeof workTop === 'number' && workTop <= threshold) {
+        setActiveSectionLocal("experience");
+      } else if (typeof aboutTop === 'number' && aboutTop <= threshold) {
+        setActiveSectionLocal("about");
       } else {
-        setActiveSection('home');
+        setActiveSectionLocal("home");
       }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    }, 100);
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+    clearTimeout(scrollTimeout);
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   return (
-    <div className="home-container">
-      <Navbar activeSection={activeSection} />
-
-      <section className="home-hero">
-        <div className="home-left" aria-label="Avatar placeholder">
+    <div className="home-container" ref={homeRef}>
+      <section className="home-hero" id="home">
+        <div className="home-left">
           <div className="avatar-placeholder">
             <span>👤</span>
           </div>
         </div>
 
         <div className="home-right">
-          <h1 className="random-offset-1">
-            Hello, I’m <span className="highlight">{firstName}</span>
-          </h1>
-          <h2 className="random-offset-2">
-            <span className="colorful-text">Front-end Web Developer</span> based in {location}
-          </h2>
+          <h1>Hello, I’m <span className="highlight">{firstName}</span></h1>
+          <h2><span className="colorful-text">Front-end Web Developer</span> based in {location}</h2>
 
-          <p className="experience-line random-offset-3">
-            <button
-              type="button"
-              className="cta-button inline-button"
-              onClick={() => workRef.current?.scrollIntoView({ behavior: 'smooth' })}
-            >
+          <p className="experience-line">
+            <button className="cta-button inline-button" onClick={() => workRef.current?.scrollIntoView({ behavior: 'smooth' })}>
               View Experience
             </button>
           </p>
         </div>
       </section>
 
-      <section ref={aboutRef}>
+      <section id="about" ref={aboutRef}>
         <About />
       </section>
-      <section ref={workRef}>
+
+      <section id="experience" ref={workRef}>
         <Experience />
       </section>
     </div>

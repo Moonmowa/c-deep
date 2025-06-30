@@ -1,16 +1,18 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Work from './components/Work/Work';
 import Articles from './components/Articles/Articles';
+import Navbar from './components/common/NavBar/Navbar';
 
 function App() {
+  const [activeSection, setActiveSection] = useState('home');
+
   return (
     <Router>
+      <Navbar activeSection={activeSection} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/articles" element={<Articles />} />
+        <Route path="/" element={<Home setActiveSection={setActiveSection} />} />
+        <Route path="/articles" element={<Articles setActiveSection={setActiveSection} />} />
       </Routes>
     </Router>
   );

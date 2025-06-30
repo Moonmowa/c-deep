@@ -22,7 +22,7 @@
       },
       {
         "id": "custom-array-map",
-        "title": "Custom Polyfill for Array.map",
+        "title": "Polyfill for Array.map",
         "description": "This snippet creates a custom implementation of `Array.prototype.map` that applies a provided function to each element of an array and returns a new array with the results.",
         "snippet": {
           "language": "javascript",

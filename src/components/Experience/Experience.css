@@ -260,7 +260,10 @@ h3 {
     gap: 0.4rem;
   }
 
-  .mobilefix-20250627083036-client-tag {
+  
+}
+
+.mobilefix-20250627083036-client-tag {
     display: inline-block;
     margin-top: 0.4rem;
     background-color: #f0f0f0;
@@ -271,16 +274,8 @@ h3 {
     color: #1e3a8a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
-}
-
-/* Hide mobile-only tag on desktop */
-@media (min-width: 769px) {
-  .mobilefix-20250627083036-client-tag {
-    display: none;
-  }
-}
-
 /* Dots */
 .dot {
   width: 10px;

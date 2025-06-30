@@ -36,7 +36,7 @@
 .roles-scroll-wrapper {
   display: flex;
   flex-direction: column;
-  animation: scroll-vertical 15s linear infinite;
+  animation: scroll-vertical 50s linear infinite;
 }
 
 .roles-section:hover .roles-scroll-wrapper {

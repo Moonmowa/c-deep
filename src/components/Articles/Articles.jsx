@@ -130,11 +130,15 @@ function MobileTopicNav({ topics, selectedTopicId, selectedExampleId, onSelect }
   );
 }
 
-export default function Articles() {
+export default function Articles({setActiveSection }) {
   const [topics, setTopics] = useState([]);
   const [selectedTopicId, setSelectedTopicId] = useState(null);
   const [selectedExampleId, setSelectedExampleId] = useState(null);
 
+  useEffect(() => {
+    setActiveSection("insights");
+  }, [setActiveSection]);
+  
   useEffect(() => {
     setTopics(topicsData);
 
@@ -179,8 +183,6 @@ export default function Articles() {
 
   return (
     <>
-      <Navbar />
-
       <section className="articles-intro-banner">
         <div className="intro-banner-inner">
           <h2>Front-End Learnings & Real-World Fixes</h2>
@@ -221,7 +223,7 @@ export default function Articles() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Click this link
+                      Click Here
                     </a>.
                   </p>
                 </div>

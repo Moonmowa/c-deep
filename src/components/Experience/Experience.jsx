@@ -18,15 +18,17 @@ function Experience() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const next = () => {
-    setFadeKey(prev => prev + 1);
-    setIndex(prev => (prev + 1) % total);
-  };
+ const next = () => {
+  const step = isMobile ? 1 : 2;
+  setFadeKey(prev => prev + 1);
+  setIndex(prev => (prev + step) % total);
+};
 
-  const prev = () => {
-    setFadeKey(prev => prev + 1);
-    setIndex(prev => (prev - 1 + total) % total);
-  };
+const prev = () => {
+  const step = isMobile ? 1 : 2;
+  setFadeKey(prev => prev + 1);
+  setIndex(prev => (prev - step + total) % total);
+};
 
   const getVisibleCards = () => {
     const count = isMobile ? 1 : 2;
